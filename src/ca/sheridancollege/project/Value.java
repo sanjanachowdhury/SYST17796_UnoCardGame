@@ -9,17 +9,28 @@ package ca.sheridancollege.project;
  *
  * @author Hoda Abokhadra
  */
-public enum Color {
-
-    RED(0, "Red"),
-    YELLOW(1, "Yellow"),
-    GREEN(2, "Green"),
-    BLUE(3, "Blue"),;
+public enum Value {
+    
+    ZERO(0, "Zero"),
+    ONE(1, "One"),
+    TWO(2, "Two"),
+    THREE(3, "Three"),
+    FOUR(4, "Four"),
+    FIVE(5, "Five"),
+    SIX(6, "Six"),
+    SEVEN(7, "Seven"),
+    EIGHT(8, "Eight"),
+    NINE(9, "Nine"),
+    SKIP(10, "Skip"),
+    REVERSE(11, "Reverse"),
+    DRAWTWO(12, "Draw two"),
+    DRAWFOUR(13, "Draw four"),
+    WILDCARD(14, "Wildcard"),;
 
     private int index;
     private String name;
 
-    private Color(int index, String name) {
+    private Value(int index, String name) {
 
         this.index = index;
         this.name = name;
