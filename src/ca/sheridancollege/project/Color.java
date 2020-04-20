@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * *This Enum class is responsible for the colors of the Uno game cards.
  */
 package ca.sheridancollege.project;
 
@@ -19,12 +17,15 @@ public enum Color {
     private int index;
     private String name;
 
+        //An argument constructor for the index and name.
+
     private Color(int index, String name) {
 
         this.index = index;
         this.name = name;
 
     }
+    //getters and setters for the index and name.
 
     public int getIndex() {
         return index;
@@ -42,7 +43,8 @@ public enum Color {
         this.name = name;
     }
 
-    //Displaying the toString output.
+    //Overridding the toString method for Displaying the output.
+
     @Override
     public String toString() {
 
