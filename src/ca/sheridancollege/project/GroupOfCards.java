@@ -15,7 +15,7 @@ import java.util.Random;
  * size attribute which is flexible for reuse.
  *
  * @author dancye
- * 
+ *
  * @modified by Dana, Hoda, Lina, Sanjana, 2020
  */
 public class GroupOfCards { //The group of cards, stored in an ArrayList enum type
@@ -51,7 +51,7 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
             Card deleteCard = cardPile.remove(0);
             player.getHandOfCards().add(deleteCard);
         }
-        
+
     }
 
     public Card dealCard() {
@@ -65,8 +65,6 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
         }
         return cardPile.remove(0);
     }
-    
-    
 
     //Size of the deck for testing purpose
     public int getSizeOfCardPile() {

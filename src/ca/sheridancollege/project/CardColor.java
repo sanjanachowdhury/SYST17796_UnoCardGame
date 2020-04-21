@@ -44,8 +44,7 @@ public enum CardColor {
     public void setName(String name) {
         this.name = name;
     }
-    
-  
+
     public static CardColor getEnumColor(String color) {
         for (CardColor c : CardColor.values()) {
             if (c.name.equalsIgnoreCase(color)) {
@@ -54,7 +53,7 @@ public enum CardColor {
         }
         return null;
     }
-    
+
     //Overridding the toString method for Displaying the output.
     @Override
     public String toString() {

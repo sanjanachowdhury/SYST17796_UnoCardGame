@@ -1,6 +1,5 @@
 package ca.sheridancollege.project;
 
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -59,29 +58,26 @@ public class UnoGame {
 
         //   player1.getHandOfCards().add(deck.dealCard());
         //player2.getHandOfCards().add(deck.dealCard());
-        
         int currentPlayerIndex = 1;
         Player currentPlayer = player1;
-        while (player1.getHandOfCards().size() > 1 && player2.getHandOfCards().size() > 1) {
+        while (player1.getHandOfCards().size() > 0 && player2.getHandOfCards().size() > 0) {
             if (currentPlayerIndex == 1) {
                 currentPlayer = player1;
                 currentPlayerIndex = 2; // set the index to player2 in the next iteration
-            }
-            else {
+            } else {
                 currentPlayer = player2;
-                currentPlayerIndex=1; // set the index to player1 in the next iteration
+                currentPlayerIndex = 1; // set the index to player1 in the next iteration
             }
-         
-            
+
             System.out.println(currentPlayer.toString() + " availble cards:");
             int cardIndex = 1;
             for (Card card : currentPlayer.getHandOfCards()) {
                 System.out.print(cardIndex + ":" + card.toString());
-                cardIndex ++;
+                cardIndex++;
             }
             System.out.println(currentPlayer.toString() + ": Enter the card index you would like to play? ");
             int inputCardIndex = -1;
-  
+
             while (inputCardIndex == -1) {
                 inputCardIndex = sc.nextInt();
                 if (inputCardIndex > currentPlayer.getHandOfCards().size()) {
@@ -89,25 +85,20 @@ public class UnoGame {
                     inputCardIndex = -1;
                     continue;
                 }
-                Card selectedCard = currentPlayer.getHandOfCards().get(inputCardIndex-1);
+                Card selectedCard = currentPlayer.getHandOfCards().get(inputCardIndex - 1);
                 if (selectedCard.getValue() == CardValue.SKIP) {
                     if (currentPlayerIndex == 1) {
                         currentPlayerIndex = 2;
-                    }
-                    else {
+                    } else {
                         currentPlayerIndex = 1;
                     }
                 }
-                
-                currentPlayer.getHandOfCards().remove(inputCardIndex-1);
+
+                currentPlayer.getHandOfCards().remove(inputCardIndex - 1);
             }
 
-      
-           
         }
-  
 
-    
         game.declareWinner();
     }
 

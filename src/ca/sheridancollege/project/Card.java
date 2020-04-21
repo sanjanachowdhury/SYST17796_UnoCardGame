@@ -8,14 +8,12 @@ package ca.sheridancollege.project;
 /**
  * A class to be used as the base Card class for the project. Must be general
  * enough to be instantiated for any Card game. Students wishing to add to the
- * code should remember to add themselves as a modifier.
- * Description Card class creates a Card type that will be used to create a deck
- * of cards
+ * code should remember to add themselves as a modifier. Description Card class
+ * creates a Card type that will be used to create a deck of cards
  *
  * @author dancye, 2018
  * @modified by dana, sanjana, hoda, lina, 2020
  */
-
 public class Card {
 
     CardValue value;
@@ -47,9 +45,10 @@ public class Card {
 
     @Override
     public String toString() {
-        if (color != null)
-            return String.format("Card:%s with color: %s \n",value,color);
-        else
-            return String.format("Card%s \n",value); // in case of random card value
+        if (color != null) {
+            return String.format("Card:%s with color: %s \n", value, color);
+        } else {
+            return String.format("Card%s \n", value); // in case of random card value
+        }
     }
 }
