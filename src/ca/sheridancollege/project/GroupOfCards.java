@@ -6,12 +6,6 @@
  */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Random;
 
 /**
  * A concrete class that represents any grouping of cards for a Game. HINT, you
@@ -22,69 +16,67 @@ import java.util.Random;
  */
 public class GroupOfCards { //The group of cards, stored in an ArrayList enum type
 
-    private Color cardsColor;
-    private Value cardValue;
-    private int size;//the size of the grouping
+    private Card[] cards;
+    private final int MAX_NUM_OF_CARDS =108;
 
-    public GroupOfCards() {
-    }
     
 
-    public GroupOfCards(int givenSize) {
-        size = givenSize;
+     public GroupOfCards() {
+        deck();
     }
 
-    public Color getCardsColor() {
-        return cardsColor;
+    public Card[] getCards() {
+        return cards;
     }
 
-    public void setCardsColor(Color CardsColor) {
-        this.cardsColor = CardsColor;
-    }
-
-    public Value getCardValue() {
-        return cardValue;
-    }
-
-    public void setCardValue(Value CardValue) {
-        this.cardValue = CardValue;
+    public void setCards(Card[] cards) {
+        this.cards = cards;
     }
   
-    public Color shuffleColor() {
-     
-    List<Color> color = new ArrayList<>();
-          color.add(Color.BLUE);
-          color.add(Color.GREEN);
-          color.add(Color.RED);
-          color.add(Color.YELLOW);
-          
-         this.cardsColor = color.get((int) (Math.random() * 3));
-           
-         return cardsColor;  // return this.CardsColor;
+     public void deck() {
+        cards = new Card[MAX_NUM_OF_CARDS];
+        //an index is used to assing the value for each element of the array
+        int index = 0;
+        for (Color c : Color.values()) {
+            for (Value v : Value.values()) {
+                cards[index] = new Card();
+                cards[index].setColor(c);
+                cards[index].setValue(v);
+                index++;//increment index to make it ready for the next element
+            }
+        }
     }
-    
-     public Value shuffleValue() {
-    List<Value> value = new ArrayList<>();
-          for (Value value1: Value.values()) {
-              value.add(value1);
-          }
-         this.cardValue = value.get((int) (Math.random() * 15));
-           
-         return cardValue;
-    }
- 
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
+   
+    public Card pickCard() {
+        //select a random value (out of 15)
+        int value = (int) (Math.random() * 15);
+        //select a random suit (out of 4)
+        int color = (int) (Math.random() * 4);
 
-    /**
-     * @param givenSize the max size for the group of cards
-     */
-    public void setSize(int givenSize) {
-        size = givenSize;
+        Card card = new Card();
+        card.setColor(Color.values()[color]);//set the random color to the card
+        card.setValue(Value.values()[value]);//set the random value to the card
+
+        return card;
     }
     
+        public void shuffle(Card[] deck) {
+        for (int i = 0; i < deck.length; i++) {//loop through the entire deck
+            /*generate a random int from 0 t0 51 to be used as index of a card
+            in the deck of cards. */
+            int j = (int) (Math.random() * 108);
+            //swap the randomly picked card with the present card
+            Card temp = deck[j];
+            deck[j] = deck[i];
+            deck[i] = temp;
+        }
+    }
+         public String toString() {
+        String s = "";
+        for (Card card : cards) {
+            s += card.toString() + "\t";
+        }
+        return s;
+    }
+        
 }//end class
