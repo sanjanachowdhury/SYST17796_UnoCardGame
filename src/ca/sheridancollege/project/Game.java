@@ -8,33 +8,30 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 
 /**
- * The class that models your game. You should create a more specific
- * child of this class and instantiate the methods given.
+ * The class that models your game. You should create a more specific child of
+ * this class and instantiate the methods given.
+ *
  * @author dancye, 2018
+ * @modified by sanjana chowdhury, 2020
  */
-public abstract class Game 
+public class Game 
 {
-    private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
-    
-    public Game(String givenName)
+    private ArrayList<Player> players;// the players of the game
+    GroupOfCards card = new GroupOfCards();
+    Player player = new Player();
+
+    public Game() 
     {
-        gameName = givenName;
         players = new ArrayList();
     }
 
     /**
      * @return the gameName
      */
-    public String getGameName() 
-    {
-        return gameName;
-    }
-    
-     /**
+    /**
      * @return the players of this game
      */
-    public ArrayList <Player> getPlayers() 
+    public ArrayList<Player> getPlayers() 
     {
         return players;
     }
@@ -42,23 +39,31 @@ public abstract class Game
     /**
      * @param players the players of this game
      */
-    public void setPlayers(ArrayList <Player> players) 
+    public void setPlayers(ArrayList<Player> players) 
     {
         this.players = players;
     }
-    
-    /**
-     * Play the game. This might be one method or many method calls depending
-     * on your game.
-     */
-    public abstract void play();
-    
+
     /**
      * When the game is over, use this method to declare and display a winning
      * player.
      */
-    public abstract void declareWinner();
+    public void declareWinner() 
+    {
 
-   
-    
+        if (card.cardPile.size() == 0) 
+        {
+            System.out.println("It's a draw!");
+        } 
+        else if (player.getHandOfCards().size() == 0) 
+        {
+            System.out.println("Player 1 won!!!");
+        } 
+        else 
+        {
+            System.out.println("Player 2 won!!!");
+        }
+
+    }
+
 }//end class

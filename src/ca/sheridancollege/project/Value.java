@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ca.sheridancollege.project;
 
 /**
+ * This Enum class is responsible for the values of the Uno game cards.
  *
- * @author Hoda Abokhadra
+ * @author Hoda Abokhadra, April 19th, 2020
  */
 public enum Value {
-    
+
     ZERO(0, "Zero"),
     ONE(1, "One"),
     TWO(2, "Two"),
@@ -27,9 +23,11 @@ public enum Value {
     DRAWFOUR(13, "Draw four"),
     WILDCARD(14, "Wildcard"),;
 
+    //private variables 
     private int index;
     private String name;
 
+    //An argument constructor for the index and name.
     private Value(int index, String name) {
 
         this.index = index;
@@ -37,6 +35,7 @@ public enum Value {
 
     }
 
+    //getters and setters for the index and name.
     public int getIndex() {
         return index;
     }
@@ -53,7 +52,8 @@ public enum Value {
         this.name = name;
     }
 
-    //Displaying the toString output.
+    //Overridding the toString method for Displaying the output.
+    //
     @Override
     public String toString() {
 

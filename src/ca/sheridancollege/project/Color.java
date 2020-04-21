@@ -6,10 +6,11 @@
 package ca.sheridancollege.project;
 
 /**
- *
+ * This Enum class is responsible for the colors of the Uno game cards.
+ * 
  * @author Hoda Abokhadra
  */
-public enum Color {
+   public enum Color {
 
     RED(0, "Red"),
     YELLOW(1, "Yellow"),
@@ -19,12 +20,15 @@ public enum Color {
     private int index;
     private String name;
 
+        //An argument constructor for the index and name.
+
     private Color(int index, String name) {
 
         this.index = index;
         this.name = name;
 
     }
+    //getters and setters for the index and name.
 
     public int getIndex() {
         return index;
@@ -42,11 +46,15 @@ public enum Color {
         this.name = name;
     }
 
-    //Displaying the toString output.
+    //Overridding the toString method for Displaying the output.
+
     @Override
     public String toString() {
 
         return String.format("%s %s %.2f \n", this.name, "@", this.index);
     }
+    
+           
 
-}
+
+   }
