@@ -11,8 +11,8 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
-{
+
+
     //default modifier for child classes
     
     /**
@@ -20,7 +20,50 @@ public abstract class Card
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
     
-    @Override
-    public abstract String toString();
-    
-}
+
+   /**
+    * 
+
+    Description
+    Card class creates a Card type that will be used to create a deck of cards
+ */
+
+
+public class Card {
+     Value value;
+     Color color;
+
+    public Card() {
+    }
+     
+     
+
+        public Card(Value value, Color color) {
+            this.value = value;
+            this.color = color;
+        }
+
+        public Value getValue() {
+            return value;
+        }
+
+        public Color getColor() {
+            return color;
+        }
+
+        public void setValue(Value value) {
+            this.value = value;
+        }
+
+        public void setColor(Color color) {
+            this.color = color;
+        }
+
+        @Override
+        public String toString() {
+            return "Card{" +
+                    "value=" + value +
+                    ", Color=" + color +
+                    '}';
+        }
+    }
