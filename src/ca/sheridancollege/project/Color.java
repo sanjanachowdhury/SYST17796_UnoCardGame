@@ -8,7 +8,7 @@ package ca.sheridancollege.project;
 /**
  * This Enum class is responsible for the colors of the Uno game cards.
  * 
- * @author Hoda Abokhadra
+ * @author Hoda Abokhadra,April 21st 2020
  */
    public enum Color {
 
