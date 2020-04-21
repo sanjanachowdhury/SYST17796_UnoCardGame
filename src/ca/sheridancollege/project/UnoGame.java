@@ -58,29 +58,56 @@ public class UnoGame {
                 + player2.getHandOfCards().size());
 
         //   player1.getHandOfCards().add(deck.dealCard());
-        player2.getHandOfCards().add(deck.dealCard());
-
-        System.out.println("Player1: What card would you like to play? ");
-        String card = sc.nextLine();
-        player1.getHandOfCards().add(deck.dealCard());
-        CardValue cardValue = CardValue.getEnumValueByCard(card);
+        //player2.getHandOfCards().add(deck.dealCard());
         
-        if (cardValue == null) {
-            System.out.println("The input is invalid, Please try again.");
+        int currentPlayerIndex = 1;
+        Player currentPlayer = player1;
+        while (player1.getHandOfCards().size() > 1 && player2.getHandOfCards().size() > 1) {
+            if (currentPlayerIndex == 1) {
+                currentPlayer = player1;
+                currentPlayerIndex = 2; // set the index to player2 in the next iteration
+            }
+            else {
+                currentPlayer = player2;
+                currentPlayerIndex=1; // set the index to player1 in the next iteration
+            }
+         
             
+            System.out.println(currentPlayer.toString() + " availble cards:");
+            int cardIndex = 1;
+            for (Card card : currentPlayer.getHandOfCards()) {
+                System.out.print(cardIndex + ":" + card.toString());
+                cardIndex ++;
+            }
+            System.out.println(currentPlayer.toString() + ": Enter the card index you would like to play? ");
+            int inputCardIndex = -1;
+  
+            while (inputCardIndex == -1) {
+                inputCardIndex = sc.nextInt();
+                if (inputCardIndex > currentPlayer.getHandOfCards().size()) {
+                    System.out.println("Invalid card index .. please try again!");
+                    inputCardIndex = -1;
+                    continue;
+                }
+                Card selectedCard = currentPlayer.getHandOfCards().get(inputCardIndex-1);
+                if (selectedCard.getValue() == CardValue.SKIP) {
+                    if (currentPlayerIndex == 1) {
+                        currentPlayerIndex = 2;
+                    }
+                    else {
+                        currentPlayerIndex = 1;
+                    }
+                }
+                
+                currentPlayer.getHandOfCards().remove(inputCardIndex-1);
+            }
+
+      
+           
         }
-        if (cardValue.name == 'REVERSE') {
+  
 
-}
-
-        if (cardValue.value == 5) { //Reverse
-
-        }
-
-        System.out.println("Player2: What card would you like to play? ");
-        String card2 = sc.nextLine();
-        player2.getHandOfCards().add(deck.dealCard());
-
+    
         game.declareWinner();
     }
 

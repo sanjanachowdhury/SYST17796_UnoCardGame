@@ -54,8 +54,8 @@ public enum CardValue {
 
     public static CardValue getEnumValueByCard(String card) {
         for (CardValue v : CardValue.values()) {
-            if (card == v.card) {
-                return e;
+            if (card.equalsIgnoreCase(v.name)) {
+                return v;
             }
         }
         return null;
@@ -65,8 +65,8 @@ public enum CardValue {
     //
     @Override
     public String toString() {
-
-        return String.format("%s %s %.2f \n", this.name, "@", this.index);
+        return String.format("%s", this.name);
     }
+    
 
 }

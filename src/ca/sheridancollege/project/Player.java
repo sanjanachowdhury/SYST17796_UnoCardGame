@@ -7,6 +7,7 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * A class that models each Player in the game. Players have an identifier,
@@ -17,7 +18,7 @@ import java.util.List;
 public class Player {
 
     private String playerID; //the unique ID for this player
-    List<Card> hand;
+    private List<Card> hand;
 
     /**
      * A constructor that allows you to set the player's unique ID
@@ -51,12 +52,11 @@ public class Player {
     public void setPlayerID(String givenID) {
         playerID = givenID;
     }
+    
 
     @Override
     public String toString() {
-        return "Player{"
-                + "hand=" + hand
-                + '}';
+        return String.format("Player: %s", this.playerID);
     }
 
 }

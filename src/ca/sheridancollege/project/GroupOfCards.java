@@ -27,7 +27,6 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
         for (CardValue value : CardValue.values()) {
             for (CardColor color : CardColor.values()) {
                 cardPile.add(new Card(value, color));
-
             }
         }
     }
@@ -40,8 +39,8 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
         Random rand = new Random();
         //Generate two random numbers between 0 to 76
         for (int i = 0; i < 7; i++) {
-            int firstCard = rand.nextInt(15);
-            int secondCard = rand.nextInt(15);
+            int firstCard = rand.nextInt(this.cardPile.size());
+            int secondCard = rand.nextInt(this.cardPile.size());
             Collections.swap(cardPile, firstCard, secondCard);
         }
     }
@@ -49,10 +48,10 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
     public void dealCard(Player player) {
         //Get next card and add to hand of the player
         for (int i = 0; i < 7; i++) {
-
             Card deleteCard = cardPile.remove(0);
             player.getHandOfCards().add(deleteCard);
         }
+        
     }
 
     public Card dealCard() {
