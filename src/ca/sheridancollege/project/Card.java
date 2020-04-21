@@ -11,8 +11,8 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
-{
+
+
     //default modifier for child classes
     
     /**
@@ -20,7 +20,85 @@ public abstract class Card
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
     
+
+   /**
+    * 
+
+    Description
+    Card class creates a Card type that will be used to create a deck of cards
+ */
+
+
+public class Card {
+
+    //the color and value from the Enums will be the data members
+    private Color color;
+    private Value value;
+
+    /**
+     * no-arg constructor can be used to instantiate a card without a rank of
+     * suit
+     */
+    public Card() {
+    }
+
+    /**
+     * Constructor for instantiating a card using its color and value
+     *
+     * @param color the color of the card
+     * @param value the value of the card
+     */
+    public Card(Color color, Value value) {
+        this.color = color;
+        this.value = value;
+    }
+
+    /**
+     * Mutator for getting the rank of a card
+     *
+     * @return the color of a card
+     */
+    public Color getColor() {
+        return color;
+    }
+
+    /**
+     * Mutator for setting the rank of a card
+     *
+     * @param color of a card
+     */
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    /**
+     * Mutator for getting the suit of a card
+     *
+     * @return the value of a card
+     */
+    public Value getValue() {
+        return value;
+    }
+
+    /**
+     * Mutator for setting the suit of a card
+     *
+     * @param value of a card
+     */
+    public void setValue(Value value) {
+        this.value = value;
+    }
+
+    /**
+     * Override the toString method to get the long name and suit of a card in a
+     * string format
+     *
+     * @return the name of a card in a string format
+     */
     @Override
-    public abstract String toString();
-    
+    public String toString() {
+        return color.getName() + " of " + value.getName() + "\n";
+    }
+
+   
 }
