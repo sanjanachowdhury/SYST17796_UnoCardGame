@@ -18,30 +18,30 @@ package ca.sheridancollege.project;
 
 public class Card {
 
-    Value value;
-    Color color;
+    CardValue value;
+    CardColor color;
 
     public Card() {
     }
 
-    public Card(Value value, Color color) {
+    public Card(CardValue value, CardColor color) {
         this.value = value;
         this.color = color;
     }
 
-    public Value getValue() {
+    public CardValue getValue() {
         return value;
     }
 
-    public Color getColor() {
+    public CardColor getColor() {
         return color;
     }
 
-    public void setValue(Value value) {
+    public void setValue(CardValue value) {
         this.value = value;
     }
 
-    public void setColor(Color color) {
+    public void setColor(CardColor color) {
         this.color = color;
     }
 

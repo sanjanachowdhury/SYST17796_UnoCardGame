@@ -5,10 +5,13 @@ import java.util.Scanner;
 
 /**
  * Class that models the main class of the UNO game application
- * 
+ *
  * @author dana, hoda, lina, sanjana, 2020
  */
 public class UnoGame {
+
+    private CardValue value;
+    private CardColor color;
 
     public static void main(String[] args) {
 
@@ -20,10 +23,10 @@ public class UnoGame {
         Game game = new Game();
         // the groupofcards object 
         GroupOfCards deck = new GroupOfCards();
-        
+
         System.out.println("---------WELCOME TO UNO!!! :)---------");
         //  System.out.print(deck.toString());
-        
+
         // displaying the size of the deck
         System.out.println("Size of deck is: " + deck.getSizeOfCardPile());
         deck.shuffle(); // shuffling the deck
@@ -60,8 +63,21 @@ public class UnoGame {
         System.out.println("Player1: What card would you like to play? ");
         String card = sc.nextLine();
         player1.getHandOfCards().add(deck.dealCard());
+        CardValue cardValue = CardValue.getEnumValueByCard(card);
+        
+        if (cardValue == null) {
+            System.out.println("The input is invalid, Please try again.");
+            
+        }
+        if (cardValue.name == 'REVERSE') {
 
-        System.out.println("Plyer2: What card would you like to play? ");
+}
+
+        if (cardValue.value == 5) { //Reverse
+
+        }
+
+        System.out.println("Player2: What card would you like to play? ");
         String card2 = sc.nextLine();
         player2.getHandOfCards().add(deck.dealCard());
 

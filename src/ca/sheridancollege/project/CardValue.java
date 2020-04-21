@@ -5,7 +5,7 @@ package ca.sheridancollege.project;
  *
  * @author Hoda Abokhadra, April 19th, 2020
  */
-public enum Value {
+public enum CardValue {
 
     ZERO(0, "Zero"),
     ONE(1, "One"),
@@ -28,7 +28,7 @@ public enum Value {
     private String name;
 
     //An argument constructor for the index and name.
-    private Value(int index, String name) {
+    private CardValue(int index, String name) {
 
         this.index = index;
         this.name = name;
@@ -50,6 +50,15 @@ public enum Value {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static CardValue getEnumValueByCard(String card) {
+        for (CardValue v : CardValue.values()) {
+            if (card == v.card) {
+                return e;
+            }
+        }
+        return null;
     }
 
     //Overridding the toString method for Displaying the output.

@@ -24,8 +24,8 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
 
     public GroupOfCards() {
         this.cardPile = new ArrayList<>();
-        for (Value value : Value.values()) {
-            for (Color color : Color.values()) {
+        for (CardValue value : CardValue.values()) {
+            for (CardColor color : CardColor.values()) {
                 cardPile.add(new Card(value, color));
 
             }
@@ -66,6 +66,8 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
         }
         return cardPile.remove(0);
     }
+    
+    
 
     //Size of the deck for testing purpose
     public int getSizeOfCardPile() {

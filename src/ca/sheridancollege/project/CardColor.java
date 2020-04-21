@@ -10,7 +10,7 @@ package ca.sheridancollege.project;
  * 
  * @author Hoda Abokhadra,April 21st 2020
  */
-   public enum Color {
+   public enum CardColor {
 
     RED(0, "Red"),
     YELLOW(1, "Yellow"),
@@ -22,7 +22,7 @@ package ca.sheridancollege.project;
 
         //An argument constructor for the index and name.
 
-    private Color(int index, String name) {
+    private CardColor(int index, String name) {
 
         this.index = index;
         this.name = name;
