@@ -45,10 +45,8 @@ public class Card {
 
     @Override
     public String toString() {
-        if (color != null) {
+     
             return String.format("Card:%s with color: %s \n", value, color);
-        } else {
-            return String.format("Card%s \n", value); // in case of random card value
-        }
+        
     }
 }
