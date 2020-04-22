@@ -43,7 +43,10 @@ public enum CardValue {
     public void setIndex(int index) {
         this.index = index;
     }
-
+    /**
+     * 
+     * @return String name of the value
+     */
     public String getName() {
         return name;
     }
@@ -51,15 +54,19 @@ public enum CardValue {
     public void setName(String name) {
         this.name = name;
     }
-
-    public static CardValue getEnumValueByCard(String card) {
-        for (CardValue v : CardValue.values()) {
-            if (card.equalsIgnoreCase(v.name)) {
-                return v;
-            }
-        }
-        return null;
-    }
+//   /**
+//    * 
+//    * @param card 
+//    * @return 
+//    */
+//    public static CardValue getEnumValueByCard(String card) {
+//        for (CardValue v : CardValue.values()) {
+//            if (card.equalsIgnoreCase(v.name)) {
+//                return v;
+//            }
+//        }
+//        return null;
+//    }
 
     //Overridding the toString method for Displaying the output.
     //

@@ -16,17 +16,18 @@ import java.util.ArrayList;
  */
 public class Game {
 
+    //data Memebers
     private ArrayList<Player> players;// the players of the game
     GroupOfCards card = new GroupOfCards();
     Player player = new Player();
 
+    /**
+     * no argument Constructor
+     */
     public Game() {
         players = new ArrayList();
     }
 
-    /**
-     * @return the gameName
-     */
     /**
      * @return the players of this game
      */

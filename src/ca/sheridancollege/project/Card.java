@@ -16,37 +16,67 @@ package ca.sheridancollege.project;
  */
 public class Card {
 
+    //data memebers 
     CardValue value;
     CardColor color;
 
+    /**
+     * no-argument Constructor
+     */
     public Card() {
     }
 
+    /**
+     * Constructor
+     *
+     * @param value the value of the card
+     * @param color the color of the card
+     */
     public Card(CardValue value, CardColor color) {
         this.value = value;
         this.color = color;
     }
 
+    /**
+     *
+     * @return the value of the card
+     */
     public CardValue getValue() {
         return value;
     }
 
+    /**
+     *
+     * @return the color of the card
+     */
     public CardColor getColor() {
         return color;
     }
 
+    /**
+     *
+     * @param value set the value
+     */
     public void setValue(CardValue value) {
         this.value = value;
     }
 
+    /**
+     *
+     * @param color set the color
+     */
     public void setColor(CardColor color) {
         this.color = color;
     }
 
+    /**
+     *
+     * @return a String representation of the Object
+     */
     @Override
     public String toString() {
-     
-            return String.format("Card:%s with color: %s \n", value, color);
-        
+
+        return String.format("Card:%s with color: %s \n", value, color);
+
     }
 }

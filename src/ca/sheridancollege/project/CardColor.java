@@ -16,7 +16,7 @@ public enum CardColor {
     YELLOW(1, "Yellow"),
     GREEN(2, "Green"),
     BLUE(3, "Blue"),;
-
+    //data memeber
     private int index;
     private String name;
 
@@ -45,6 +45,11 @@ public enum CardColor {
         this.name = name;
     }
 
+    /**
+     *
+     * @param color as a String
+     * @return the color of the card
+     */
     public static CardColor getEnumColor(String color) {
         for (CardColor c : CardColor.values()) {
             if (c.name.equalsIgnoreCase(color)) {
