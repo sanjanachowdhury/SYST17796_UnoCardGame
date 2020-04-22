@@ -52,12 +52,63 @@ public class Player {
     }
 
     /**
+     * A method to check that the palyerId length is 3 letters or more
+     *
+     * @param name
+     * @return
+     */
+    public static boolean checkId(String name) {
+        if (name.length() >= 3) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * A method that check if the password does not have any special character
+     *
+     * @param pass
+     * @return
+     */
+    public static boolean checkChar(String name) {
+        for (int i = 0; i < name.length(); i++) {
+            int ch = name.charAt(i);
+            if (!Character.isLetterOrDigit(ch)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * A method to test if the user ii is unique
+     *
+     * @param player1
+     * @return
+     */
+    public static boolean checkUnique(String player1, String player2) {
+
+        if (player1.equals(player2)) {
+            throw new IllegalArgumentException("Error, Enter unique user Id");
+        }
+
+        return true;
+    }
+
+    /**
      * Ensure that the playerID is unique
      *
      * @param givenID the playerID to set
      */
     public void setPlayerID(String givenID) {
-        playerID = givenID;
+        if (checkId(givenID)
+                && checkChar(givenID)) {
+
+            this.playerID = givenID;
+
+        } else {
+            throw new IllegalArgumentException(" Wrong value, try again!");
+        }
     }
 
     /**
