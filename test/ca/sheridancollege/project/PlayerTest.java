@@ -9,9 +9,10 @@ import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- *
- * @author leens For checkUnique, we did not add a boundary test because it is
- * not applicable her
+ * For checkUnique, we did not add a boundary test because it is
+ * not applicable here.
+ * 
+ * @author Lina, 2020
  */
 public class PlayerTest {
 
