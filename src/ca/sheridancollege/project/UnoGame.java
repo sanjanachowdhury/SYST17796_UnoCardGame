@@ -9,10 +9,6 @@ import java.util.Scanner;
  */
 public class UnoGame {
 
-    //Private data memebers 
-    private CardValue value;
-    private CardColor color;
-
     public static void main(String[] args) {
 
         // creating player 1 & player 2 objects
