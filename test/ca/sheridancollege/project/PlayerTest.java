@@ -12,7 +12,7 @@ import org.junit.Test;
  * For checkUnique, we did not add a boundary test because it is
  * not applicable here.
  * 
- * @author Lina, 2020
+ * @author Lina Shalabi, 2020
  */
 public class PlayerTest {
 
