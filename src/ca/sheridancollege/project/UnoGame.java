@@ -11,6 +11,10 @@ public class UnoGame {
 
     public static void main(String[] args) {
 
+        boolean isValid = true;
+        boolean valid = true;
+        boolean valid2 = true;
+
         // creating player 1 & player 2 objects
         Player player1 = new Player();
         Player player2 = new Player();
@@ -28,19 +32,51 @@ public class UnoGame {
         System.out.println("Size of deck is: " + deck.getSizeOfCardPile());
         deck.shuffle(); // shuffling the deck
 
-        /**
-         * this is the first player
-         */
-        System.out.print("Enter Player 1 ID: ");
-        String playerInput = sc.nextLine();
-        player1.setPlayerID(playerInput);
+        do {
+            String playerInput;
+            do {
+                try {
 
-        /**
-         * this is the second player
-         */
-        System.out.print("Enter Player 2 ID: ");
-        String player2Input = sc.nextLine();
-        player2.setPlayerID(player2Input);
+                    System.out.print("Enter Player 1 ID: ");
+                    playerInput = sc.nextLine();
+                    player1.setPlayerID(playerInput);
+                    isValid = false;
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                    System.out.print("Enter Player 1 ID: ");
+                    playerInput = sc.nextLine();
+
+                }
+
+            } while (isValid);
+
+            String player2Input;
+            do {
+                try {
+
+                    /**
+                     * this is the second player
+                     */
+                    System.out.print("Enter Player 2 ID: ");
+                    player2Input = sc.nextLine();
+                    valid = false;
+                    player2.setPlayerID(player2Input);
+
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                    System.out.print("Enter Player 2 ID: ");
+                    player2Input = sc.nextLine();
+                }
+            } while (valid);
+            try {
+
+                Player.checkUnique(playerInput, player2Input);
+                valid2 = false;
+            } catch (IllegalArgumentException e) {
+
+                System.out.println(e.getMessage());
+            }
+        } while (valid2);
 
         /**
          * dealCard for the first player
