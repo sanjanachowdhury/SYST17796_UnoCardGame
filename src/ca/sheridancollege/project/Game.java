@@ -48,7 +48,7 @@ public class Game {
      */
     public void declareWinner() {
 
-        if (card.cardPile.size() == 0) {
+        if (card.getCardPile().size() == 0) {
             System.out.println("It's a draw!");
         } else if (player.getHandOfCards().size() == 0) {
             System.out.println("Player 1 won!!!");

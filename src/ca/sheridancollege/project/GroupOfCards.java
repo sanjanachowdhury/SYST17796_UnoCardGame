@@ -21,7 +21,7 @@ import java.util.Random;
 public class GroupOfCards { //The group of cards, stored in an ArrayList enum type
     //data memebers
 
-    List<Card> cardPile;
+    private List<Card> cardPile;
 
     /**
      * Constructor that set the ArrayList of the cardPile()
@@ -42,7 +42,14 @@ public class GroupOfCards { //The group of cards, stored in an ArrayList enum ty
     public List<Card> getCardPile() {
         return cardPile;
     }
-
+     /**
+      * this a setter to set the cardPile
+      * @param cardPile 
+      */
+    public void setCardPile(List<Card> cardPile) {
+        this.cardPile = cardPile;
+    }
+ 
     /**
      * A method that shuffle the deck.
      */
