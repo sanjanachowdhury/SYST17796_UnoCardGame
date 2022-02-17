@@ -1,4 +1,4 @@
 # SYST17796_UnoCardGame
-This is a group project for Fundemntal of Software Design and develpment course in Sheridan college. 
+This is a group project for Fundamental of Software Design and Development course at Sheridan college. 
 The code models a simple Uno Game application. 
-Software development and network engineering - Winter Semester, 2020. 
+Software Development and Network Engineering - Winter Semester, 2020. 
